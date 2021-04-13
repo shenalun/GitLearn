@@ -1,0 +1,30 @@
+/*
+Git是分布式版本控制系统，--global参数表示这台机器上所有的Git仓库都会使用这个配置
+也可以对某个仓库指定不同的用户名和Email
+*/
+01	git config --global user.name "shenalun"
+02	git config --global user.email "shenalun@163.com"
+
+/*
+把当前目录初始化成Git可以管理的目录,当前目录下出现的.git文件就是用来跟踪管理版本库的
+*/
+03	git init
+
+/*
+把文件xxx添加到暂存区
+*/
+04	git add xxx
+
+/*
+把文件xxx提交到仓库,-m后面输入的是本次提交的说明，最好有意义，方便从历史记录里找到改动
+commit可以一次提交很多文件，可以多次add不同的文件，比如：
+	git add file1.txt
+	git add file2.txt file3.txt
+	git commit -m "add 3 files"
+*/
+05	git commit -m "read_me"
+
+/*
+时刻掌握仓库当前的状态
+*/
+06	git status
