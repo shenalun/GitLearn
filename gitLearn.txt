@@ -99,3 +99,44 @@ git commit
 */
 15	git checkout -- file (the same as 12)
 ===========================================================================================
+/*
+关联远程仓库
+*/
+16	git remote add origin git@github.com:shenalun/GitLearn.git
+===========================================================================================
+/*
+把本地仓库的内容推送到GitHub仓库，git push 命令把当前分支master推送到远程，第一次推送master分支时，
+加上-u参数，Git不但会把本地的master分支内容推送到远程新的origin/master分支上，还会把本地的master分支
+和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令git push/pull
+若上传远程仓库出错，先把远程仓库拉下来，会自动合并的，再上传
+*/
+17	git pull origin master 
+	git push -u origin master
+===========================================================================================	
+/*
+如果pull时出错 添加参数 --allow-unrelated-histories 把两段不相干的分支进行强行合并，后面再push就可以了
+*/	
+18	git pull origin master --allow-unrelated-histories
+	git push origin master
+	git push		//或者直接使用更简化命令
+===========================================================================================	
+/*
+要克隆一个仓库，首先必须知道仓库的地址，然后使用git clone命令克隆，Git支持多种协议，包括https，
+但ssh协议速度最快
+*/		
+19	git clone git@github.com:shenalun/DriverLibraryInteraction_CrossPlatform_Git.git	
+===========================================================================================	
+/*
+HEAD严格上来说不是指向提交，而是指向master,master才是指向提交的，所以HEAD指向的就是当前分支
+创建并切换分支用以下命令 -b参数表示创建并切换
+*/
+20	git checkout -b xxx
+
+相当于：
+21	git branch xxx	
+	git checkout xxx
+===========================================================================================	
+/*
+查看当前分支,该命令会列出所有分支，当前分支前面会标一个*以示区分
+*/
+22 git branch
