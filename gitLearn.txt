@@ -142,3 +142,4 @@ HEAD严格上来说不是指向提交，而是指向master,master才是指向提
 22 git branch
 
 23	test:Creating a new branch is quick
+24	test:Forbidden Past-forward
