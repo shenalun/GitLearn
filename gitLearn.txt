@@ -131,10 +131,11 @@ HEAD严格上来说不是指向提交，而是指向master,master才是指向提
 创建并切换分支用以下命令 -b参数表示创建并切换
 */
 20	git checkout -b xxx
+20	git switch -c xxx
 
 相当于：
 21	git branch xxx	
-	git checkout xxx
+	git checkout xxx   /   git switch xxx
 ===========================================================================================	
 /*
 查看当前分支,该命令会列出所有分支，当前分支前面会标一个*以示区分
@@ -143,3 +144,19 @@ HEAD严格上来说不是指向提交，而是指向master,master才是指向提
 
 23	test:Creating a new branch is quick
 24	test:Forbidden Past-forward
+
+===========================================================================================	
+/*
+合并指定分支到当前分支，Fast-forward快进模式，若当前在master分支，执行git merge dev
+直接把master指向dev的当前提交，合并完成可以放心删除dev分支
+*/
+25	git merge xxx 
+===========================================================================================	
+总结：
+查看分支：				git branch
+创建分支：				git branch xxx
+切换分支：				git checkout xxx 或者 git switch xxx
+创建+切换分支：			git checkout -b xxx 或者 git switch -c xxx
+合并某分支到当前分支：	git merge xxx 
+删除分支：				git branch -d xxx 
+===========================================================================================	
