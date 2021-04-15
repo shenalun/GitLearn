@@ -306,3 +306,4 @@ test:
 test 02 测试rebase命令 in rebase2 branch
 */
 test:
+test02+:
