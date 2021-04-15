@@ -296,3 +296,8 @@ git branch --set-upstream-to <branch name>  origin/<branch name>
 然后才能push成功，每次合并再push，分支变得很乱，让git 提交的历史变成一条干净的直线
 */
 43	git rebase
+===========================================================================================
+/*
+test 01 测试rebase命令
+*/
+test:	
