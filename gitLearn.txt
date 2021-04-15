@@ -301,3 +301,8 @@ git branch --set-upstream-to <branch name>  origin/<branch name>
 test 01 测试rebase命令
 */
 test:	
+===========================================================================================
+/*
+test 02 测试rebase命令 in rebase2 branch
+*/
+test:
