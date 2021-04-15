@@ -290,4 +290,9 @@ add -> commit-> push
 4、没有冲突或冲突解决掉后，再用git push origin <branch name>推送就能成功。
 如果git pull 提示no tracking information，则说明本地分支和远程分支的链接没有创建成功，用命令
 git branch --set-upstream-to <branch name>  origin/<branch name>
-
+===========================================================================================
+/*
+多人在同一个分支上协作时，很容易出现冲突，即使没有冲突，后push的小伙伴不得不先pull，在本地合并
+然后才能push成功，每次合并再push，分支变得很乱，让git 提交的历史变成一条干净的直线
+*/
+43	git rebase
