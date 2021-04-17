@@ -370,3 +370,65 @@ tag 不同于commit id 难找，它就是一个让人容易记住的有意义的
 在GitHub上，可以任意Fork开源仓库
 自己拥有Fork的仓库的独写权限
 可以推送pull request 给官方仓库来贡献代码
+===========================================================================================
+/*
+如果使用git remote add 时报错，可能本地库已经关联了一个origin的远程库，此时，可以先查看远程
+库信息
+*/
+53	git remote -v
+===========================================================================================
+/*
+删除已有的GitHub远程库，默认为origin，这里用通配符xxx代替
+*/
+54	git remote rm xxx
+===========================================================================================
+/*
+一个本地库既关联GitHub，又关联Gitee，使用多个远程库时，git给远程库起的默认名为origin，如果有
+多个远程库，我们需要用不同的名称来标志不同的远程库，比如关联GitHub远程库可以起名为github，
+关联Gitee远程库，可以起名为gitee
+*/
+55	git remote add github git@github.com:xxxxxxxxxxx
+55	git remote add gitee git@gitee.com:xxxxxxxxxxxxx
+
+/*
+现在远程库的名字就叫github 以及 gitee了，当然这里名字可以随便起，如果要推送到GitHub，使用：
+*/
+56	git remote github master/dev/or other branch
+
+/*
+推送到Gitee，使用：
+*/
+57	git push gitee master/dev/or other branch
+
+//以上关于本地库与多个远程库的同步
+===========================================================================================
+自定义GIT：
+/*
+Git配置项，让Git显示颜色，让输出台看起来更醒目
+*/
+58	git config --global color.ui true
+
+/*
+忽略特殊文件，创建.gitignore文件添加规则，如果要添加一个文件，但这个文件被.gitignore规则忽略
+掉了，但又确实要添加可以添加参数 -f 强制添加到Git
+*/
+59	git add -f xxx.xxx
+
+/*
+或许发现可能是.gitignore写得有问题，需要找出来哪个规则写错了，使用以下命令可以指导第几行忽略了
+该文件，于是就可以知道应该修订哪个规则
+*/
+60	git check-ignore -v xxx.xxx 
+
+/*
+配置别名，举例:告诉Git，以后st表示status，以后查看工作区状态直接 git st即可，--global参数是全局
+参数，这个命令在这台电脑上所有的Git仓库下都有用
+*/
+61	git config --global alias.st status
+
+/*
+对于有多个单词的命令则需要用双引号括起来，比如git reset HEAD file 
+*/
+62	git config --global	aliast.xxx "reset HEAD"
+===========================================================================================
+The End!
